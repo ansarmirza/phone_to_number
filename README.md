@@ -2,6 +2,8 @@
 It is a simple ruby program used to convert number to equivalent words based on the dictionary.
 This repo contain a class(NumberToWord) used to convert number to maching words, A supportive(convert.rb) file used to check random numbers
 
+This solution also include a test case with three examples you can run test cases by "ruby tc_number_to_word.rb"
+
 Follow the below stpes for test numbers:
 
 1) Clone App from https://github.com/ansarmirza/phone_to_number
