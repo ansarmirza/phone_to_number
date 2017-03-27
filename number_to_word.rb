@@ -5,7 +5,6 @@ class NumberToWord
     return [] if digits.nil? || digits.length != 10 || digits.split('').select{|a|(a.to_i == 0 || a.to_i == 1)}.length > 0
     #number to letters mapping
     letters = {"2" => ["a", "b", "c"],"3" => ["d", "e", "f"],"4" => ["g", "h", "i"],"5" => ["j", "k", "l"],"6" => ["m", "n", "o"],"7" => ["p", "q", "r", "s"],"8" => ["t", "u", "v"],"9" => ["w", "x", "y", "z"]}
-
     # Read dictionary file and hold all values in a array
     dictionary = {}
     file_path = "dictionary.txt"
@@ -25,9 +24,7 @@ class NumberToWord
       second_array = keys[i + 1..total_number]
       next if second_array.length < 3
       first_combination = first_array.shift.product(*first_array).map(&:join) # Get product of arrays #get_combination(first_array, dictionary)#
-      next if first_combination.nil?
       second_combination = second_array.shift.product(*second_array).map(&:join)
-      next if second_combination.nil?
       results[i] = [(first_combination & dictionary[i+2]), (second_combination & dictionary[total_number - i +1])] # get common values from arrays
     end
     #arrange words like we need as a output
